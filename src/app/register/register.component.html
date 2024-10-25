@@ -1,0 +1,48 @@
+<div class="register-container">
+
+<div class="register-item">
+    <h2>Registrar Nueva Cuenta</h2>
+<form (ngSubmit)="postRegister()" [formGroup]="formdatos">
+<div class="form-group">
+    <label>Nombre Completo</label>
+    <input type="text"  name="username" class="form form-control"  formControlName="username"/>
+    <div *ngIf="formdatos.get('username')?.errors && formdatos.get('username')?.touched">
+        <div *ngIf="formdatos.get('username')?.hasError('required')">  el campo username esta vacio</div>
+    </div>
+</div>
+<div class="form-group">
+    <label>Email</label>
+    <input type="text"  name="email" class="form form-control"  formControlName="email"/>
+    <div *ngIf="formdatos.get('email')?.errors && formdatos.get('email')?.touched">
+        <div *ngIf="formdatos.get('email')?.hasError('required')">  el campo email esta vacio</div>
+        <div *ngIf="formdatos.get('email')?.hasError('email')">  el campo email no es valido</div>
+
+    </div>
+</div>
+<div class="form-group">
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password"  formControlName="password" class="form-control">
+    <div *ngIf="formdatos.get('password')?.errors && formdatos.get('password')?.touched">
+      <div *ngIf="formdatos.get('password')?.hasError('required')">La contraseña es requerida.</div>
+      <div *ngIf="formdatos.get('password')?.hasError('minlength')">La contraseña debe tener al menos 8 caracteres.</div>
+    </div>
+    
+</div>
+<div class="form-group">
+    <label for="confirmPassword">Confirmar Contraseña:</label>
+    <input type="password" name="confirmPassword" formControlName="confirmPassword" class="form-control">
+    <div *ngIf="formdatos.hasError('notSame') && formdatos.get('confirmPassword')?.touched">
+      Las contraseñas no coinciden.
+    </div>
+    
+</div>
+
+<button type="submit" class="btn btn-primary">Registrarse</button>
+</form>
+
+
+
+
+</div>
+
+</div>

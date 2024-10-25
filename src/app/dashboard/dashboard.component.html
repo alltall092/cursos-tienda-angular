@@ -1,0 +1,104 @@
+<div class="container-fluid">
+<div class="row">
+ 
+<div class="col-md-2 col-ms-6 menu">
+    <i class="fa-solid fa-circle-user user"></i>
+
+
+    
+      <ul class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <li class="nav-item">
+          <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"> <i class="fa-brands fa-product-hunt icon"></i>Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa-solid fa-user icon"></i>Usuarios</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa-solid fa-address-book icon"></i>Contactos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-truck icon"></i>Ordenes</a>
+        </li>
+      </ul>
+    
+    
+    </div>
+<div class="col-md-10 col-ms-6 main">
+  <header class="container cont"></header>
+    <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+<div class="container cont2">
+<app-cursos></app-cursos>
+</div>
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0"> 
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <th>usuario</th>
+        <th>Roles</th>
+        
+        <th>Action</th>
+         
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.roles}}</td>
+     
+        <td><button class="btn btn-primary">Cambiar Contraseña</button></td>
+        <td><button class="btn btn-success">cambiar  Roles</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">hola </div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+<div class="container">
+  <table class="table table-hover">
+   <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre Completo</th>
+      <th>Email</th>
+      <th>Comentario</th>
+      <td>Action</td>
+
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let con of contact">
+
+  <td>{{con.id}}</td>
+  <td>{{con.nombre}}</td>
+  <td>{{con.email}}</td>
+  <td>{{con.comentario}}</td>
+  <td><button class="btn btn-danger">Eliminar</button></td>
+</tr>
+  </tbody> 
+ </table>
+</div>
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">dfd</div>
+      </div>
+    </div>
+
+</div>
+
+
+</div>

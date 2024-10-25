@@ -1,0 +1,17 @@
+.container.cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Distribuye las columnas automáticamente */
+  gap: 1rem; /* Espacio entre las columnas y filas */
+  padding: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.botones {
+  margin-top: auto;
+  width:100% /* Empuja el botón al final de la tarjeta */
+}

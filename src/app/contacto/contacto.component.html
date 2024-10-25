@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container-fluid cont">
+<div class="container contenedor-form">
+  
+    <div class="item-form">
+        <h2>Formulario de Contacto</h2>
+        <form (ngSubmit)="enviarSubmit()">
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" class="form form-control" [(ngModel)]="datos.nombre" [value]="datos.nombre"/>
+            </div>
+            <div class="form-group">
+                <label>email</label>
+                <input type="text"  class="form-control"  [(ngModel)]="datos.email"/>
+            </div>
+            <div class="form-group">
+                <label>Comentarios</label>
+                <textarea class="form-control" [(ngModel)]="datos.comentario"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <app-whatsapp></app-whatsapp>
+    </div>
+   </div>
+  
+   <app-footer></app-footer>
+   

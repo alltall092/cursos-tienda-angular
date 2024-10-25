@@ -1,0 +1,60 @@
+
+
+<div class="container-fluid">
+
+<div class="item-content color">
+<h2 class="titulo2">Shopping Cart</h2>
+<h2 class="titulo2">{{carts.length}} Items</h2>
+</div>
+<hr/>
+<div class="container-fluid container-cart">
+    <div class="cart-wrapper">
+      <div class="cart-items">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="col-4">products details</th>
+              <th></th>
+              <th class="col-3">quantity</th>
+              <th class="col-3">prices</th>
+              <th class="col-4">total</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let cart of carts; index as i">
+            <tr>
+              <td class="col-2">
+                <img src={{cart.url}} alt="imagnes" height="100" width="100" class="img"/>
+              </td>
+              <td class="col-4">
+                <h5 class="titulo">{{cart.titulo}}</h5>
+              </td>
+              <td class="col-4 quantity-wrapper">
+                <button class="btn btn-primary" (click)="increment(cart.id,cart.quantity)">+</button>
+                <input [(ngModel)]="cart.quantity" class="form-control formu"/>
+                <button class="btn btn-primary" (click)="decrement(cart.id,cart.quantity)">-</button>
+              </td>
+              <td class="col-4">
+                <h2>{{cart.price}}</h2>
+              </td>
+              <td class="col-4">
+                <h2>{{cart.quantity * cart.price}}</h2>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="cursos" class="continue-shopping">Continue Shopping</a>
+      </div>
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <hr/>
+        <div class="item-content">
+          <h2>Total</h2>
+          <p>{{getTotal()}}</p>
+        </div>
+        <div id="paypal-button-container" class="item-cart"></div>
+      </div>
+    </div>
+  </div>
+  
+
+

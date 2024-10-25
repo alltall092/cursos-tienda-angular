@@ -1,0 +1,34 @@
+<div class="login-container">
+   
+      
+<div class="login-item">
+<h2>Iniciar Session</h2>
+<form  (ngSubmit)="postLogin()" [formGroup]="formdatos">
+<div class="form-group formu">
+    <label>Email</label>
+    <input type="text" name="email" class="form-control input" formControlName="email"   name="email" />
+    <div *ngIf="!formdatos.get('email')?.valid && (formdatos.get('email')?.dirty ||formdatos.get('email')?.touched)">
+        <div [hidden]="!formdatos.get('email')?.errors?.['required']">
+          email is required
+        </div>
+        <div [hidden]="!formdatos.get('email')?.errors?.['email']">
+          invalid email id
+        </div>
+      </div>
+</div>
+<div class="form-group formu">
+<label>Password</label>
+<input type="password" name="password" class="form-control input" formControlName="password" />
+<div *ngIf="formdatos.get('pssword')?.invalid && (formdatos.get('password')?.dirty || formdatos.get('password')?.touched)">
+    <div *ngIf="formdatos.get('password')?.hasError('required')">El nombre es requerido.</div>
+  </div>
+
+</div>
+<button type="submit" class="btn btn-primary boton">Iniciar Session</button>
+</form>
+</div>
+
+</div>
+<div *ngIf="loginMessage" class="alert alert-success">
+    {{ loginMessage }}
+  </div>

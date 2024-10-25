@@ -1,0 +1,39 @@
+.menu{
+background-color:white;
+height:100vh;
+position: fixed;
+margin:0px 500px 0px 0px;
+padding: 4px;
+
+}
+.user{
+    font-size:175px;
+    margin: 0 auto;
+    padding:20px;
+    color:darkblue;
+    
+}
+.icon{
+    margin:2px;
+    padding: 2px;
+}
+.cont{
+background-color:darkblue;
+height: 50px;
+margin:0px;
+padding:0px;
+
+}
+.cont2{
+overflow-y: scroll;
+height:100%;
+background-color: white;
+margin:10px 2px 0px 2px;
+padding:15px;
+box-shadow: 4px 4px 5px rgba(0,0,0,0.2);
+}
+
+.main {
+    margin-left:235px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }

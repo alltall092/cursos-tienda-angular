@@ -1,0 +1,53 @@
+
+<div class="row">
+<div class="col-md-6 col-ms-6">
+  <h4>Agregar Cursos</h4>
+
+<form [formGroup]="datosform" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" name="titulo" class="form-control">
+    </div>
+   
+    <div class="form-group">
+      <label for="autor_instructor">Autor / Instructor:</label>
+      <input type="text" id="autor_instructor" name="autor_instructor" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="duracion">Duración:</label>
+      <input type="text" id="duracion" name="duracion" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="nivel">Nivel:</label>
+      <select id="nivel" name="nivel" class="form-select" aria-label="Default select example">
+        <option value="Principiante" selected>Principiante</option>
+        <option value="Intermedio">Intermedio</option>
+        <option value="Avanzado">Avanzado</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="categoria">Categoría:</label>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>-----------</option>
+        <option  *ngFor="let category of categories"value={{category.id}}>{{category.name}}</option>
+    </select>
+    </div>
+    <div class="form-group">
+      <label for="precio">Precio:</label>
+      <input type="number" class="form-control" id="precio" name="precio" >
+    </div>
+    <div class="form-group">
+      <label for="imagenes">Imágenes:</label>
+      <input type="file" id="imagenes" formControlName="imagenes" (change)="onFileChange($event)"  accept="image/*" multiple class="form-control">
+    </div>
+    <div class="form-group">
+         <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" class="form-control"></textarea>
+      </div>
+    <br/>
+      <button type="submit" class="btn btn-primary boton">Guardar</button>
+    
+
+</form>
+</div>
+</div>
